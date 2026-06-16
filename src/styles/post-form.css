@@ -1,0 +1,147 @@
+/* ===============================
+   CREATE POST PAGE – SPACING FIX
+================================ */
+
+/* Page container */
+.post-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 20px 60px;
+}
+
+/* Page title */
+.post-container h1 {
+  margin-bottom: 24px;
+  font-size: 1.9rem;
+}
+
+/* Form layout */
+.post-form {
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px; /* unified spacing */
+}
+
+/* Labels */
+.post-form label {
+  margin-bottom: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* Inputs */
+.post-form input {
+  padding: 12px 14px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+}
+
+/* Prevent margin stacking */
+.post-form input,
+.editor-wrapper {
+  margin: 0;
+}
+
+/* Editor wrapper spacing */
+.editor-wrapper {
+  margin-top: 4px;
+}
+
+/* Toolbar spacing */
+.editor-toolbar {
+  padding: 8px;
+  gap: 6px;
+}
+
+/* Editor content spacing */
+.editor {
+  padding: 16px;
+  min-height: 240px;
+  line-height: 1.75;
+  direction: ltr;
+  unicode-bidi: plaintext;
+  text-align: left;
+}
+
+/* Publish button spacing */
+.post-form button {
+  margin-top: 14px;
+  align-self: flex-start;
+  padding: 12px 22px;
+}
+
+/* Mobile fix */
+@media (max-width: 640px) {
+  .post-container {
+    padding: 20px 16px 40px;
+  }
+
+  .post-form {
+    padding: 24px;
+  }
+}
+
+/* ===============================
+   RICH TEXT TOOLBAR – HORIZONTAL
+================================ */
+
+.editor-toolbar {
+  display: flex;
+  flex-direction: row;        /* force horizontal */
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+  flex-wrap: nowrap;          /* prevent wrapping */
+}
+
+/* Toolbar buttons */
+.editor-toolbar button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 36px;
+  height: 36px;
+
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #374151;
+
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+/* ===============================
+   EDITOR BORDER HIGHLIGHT
+================================ */
+
+/* Default editor wrapper */
+.editor-wrapper {
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Highlight when editor is active */
+.editor-wrapper:focus-within {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.editor-wrapper:focus-within .editor-toolbar {
+  background: #eef2ff;
+}
