@@ -18,7 +18,12 @@ function BlogPost() {
       <article className="blog-post">
         <h1>{post.title}</h1>
         <small className="post-date">{post.date}</small>
-        <p className="post-content">{post.content}</p>
+        {/* <p className="post-content">{post.content}</p> */}
+
+        <div
+          className="post-content"
+          dangerouslySetInnerHTML={{ __html: post.content }}
+        />
       </article>
     </section>
   );
