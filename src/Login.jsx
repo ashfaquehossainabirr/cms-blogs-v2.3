@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { login } from "./auth";
+import "./styles/login.css"
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -20,30 +21,32 @@ function Login() {
   };
 
   return (
-    <section className="container">
-      <h1>Admin Login</h1>
+    <section className="login-page">
+      <div className="login-card">
+        <h1>Admin Login</h1>
 
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
+        <form onSubmit={handleSubmit}>
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
 
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
 
-        {error && <p className="error">{error}</p>}
+          {error && <p className="error">{error}</p>}
 
-        <button>Login</button>
-      </form>
+          <button>Login</button>
+        </form>
+      </div>
     </section>
   );
 }
