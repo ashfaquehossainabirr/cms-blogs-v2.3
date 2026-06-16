@@ -1,3 +1,4 @@
+/* Reset-ish */
 * {
   box-sizing: border-box;
 }
@@ -242,4 +243,93 @@ body {
 
 .read-more:hover::after {
   width: 100%;
+}
+
+
+/* ----------------------------------------------------- */
+/* Updated Blog Details Page UI */
+/* ----------------------------------------------------- */
+
+
+/* Page wrapper */
+.blog-post-page,
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+}
+
+/* Back button */
+.back-button {
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2563eb;
+  cursor: pointer;
+  margin-bottom: 28px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.back-button:hover {
+  text-decoration: underline;
+}
+
+/* Article */
+.blog-post {
+  background: #ffffff;
+  padding: 48px 56px;
+  border-radius: 18px;
+  border: 1px solid #e5e7eb;
+}
+
+/* Title */
+.blog-post h1 {
+  font-size: 36px;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  color: #111827;
+}
+
+/* Date */
+.post-date,
+.blog-post small {
+  display: block;
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 32px;
+}
+
+/* Content */
+.post-content,
+.blog-post p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #374151;
+  margin-bottom: 22px;
+  white-space: pre-wrap;
+}
+
+/* Improve paragraph rhythm */
+.blog-post p + p {
+  margin-top: 20px;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .blog-post {
+    padding: 28px 22px;
+  }
+
+  .blog-post h1 {
+    font-size: 28px;
+  }
+
+  .post-content,
+  .blog-post p {
+    font-size: 16px;
+  }
 }

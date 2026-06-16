@@ -10,17 +10,16 @@ function BlogPost() {
   if (!post) return <h2>404 – Post Not Found</h2>;
 
   return (
-    <section className="container">
-      <button
-          className="back-button"
-          onClick={() => navigate("/")}
-        >
-          ← Back to Blog
+    <section className="blog-post-page">
+      <button className="back-button" onClick={() => navigate("/")}>
+        ← Back to Blog
       </button>
 
-      <h1>{post.title}</h1>
-      <small>{post.date}</small>
-      <p>{post.content}</p>
+      <article className="blog-post">
+        <h1>{post.title}</h1>
+        <small className="post-date">{post.date}</small>
+        <p className="post-content">{post.content}</p>
+      </article>
     </section>
   );
 }
