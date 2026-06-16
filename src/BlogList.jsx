@@ -6,17 +6,21 @@ function BlogList() {
   const posts = getPosts();
 
   return (
-    <section className="container">
-      <h1>Blog</h1>
+    <section className="blog-container">
+      <h1 className="blog-title">Blog</h1>
 
-      {posts.length === 0 && <p>No posts yet.</p>}
+      {posts.length === 0 && <p className="empty">No posts yet.</p>}
 
-      {posts.map((post) => (
-        <article key={post.id}>
-          <h2>{post.title}</h2>
-          <Link to={`/blog/${post.slug}`}>Read More →</Link>
-        </article>
-      ))}
+      <div className="blog-grid">
+        {posts.map((post) => (
+          <article key={post.id} className="blog-card">
+            <h2>{post.title}</h2>
+            <Link to={`/blog/${post.slug}`} className="read-more">
+              Read More →
+            </Link>
+          </article>
+        ))}
+      </div>
     </section>
   );
 }
